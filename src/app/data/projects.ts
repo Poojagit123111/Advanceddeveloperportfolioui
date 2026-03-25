@@ -14,7 +14,7 @@ export interface ProjectItem {
   description: string;
   image: string;
   tech: string[];
-  liveUrl: string;
+  liveUrl?: string;
   githubUrl: string;
   caseStudy: ProjectCaseStudy;
 }
@@ -29,10 +29,10 @@ export const projects: ProjectItem[] = [
     description:
       'A full-stack HR management platform built to centralize employee administration, attendance monitoring, leave workflows, and payroll operations in one secure system. The project combines a React.js and Vite frontend with a Django backend and PostgreSQL database to replace fragmented manual processes with a structured, role-aware digital workflow. It improves data accuracy, reduces repetitive HR tasks, and gives administrators a reliable way to manage day-to-day workforce operations.',
     image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+      '/hrms-software.jpeg',
     tech: ['React.js', 'Vite', 'Python', 'Django', 'JavaScript', 'PostgreSQL', 'REST API', 'Git'],
     liveUrl: '#',
-    githubUrl: 'https://github.com/PoojaBai-K/HRMS',
+    githubUrl: 'https://github.com/PoojaBai-K/HRMS-NEW',
     caseStudy: {
       challenge:
         'HR teams often manage employee records, attendance logs, leave approvals, and payroll data across disconnected spreadsheets or manual registers. That setup makes approvals slow, increases the chance of data inconsistencies, and makes it difficult to maintain a trustworthy source of employee information.',
@@ -59,10 +59,10 @@ export const projects: ProjectItem[] = [
     description:
       'A responsive full-stack website developed for an overseas education consultancy to present services, improve credibility, and streamline student enquiries. The platform highlights visa categories, universities, and consultancy offerings through dynamic pages backed by Django, while the React.js and Vite frontend delivers a modern browsing experience. It was designed to strengthen the consultancy\'s online presence and make it easier for prospective students to discover programs and connect with the team.',
     image:
-      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+      '/optimus.png',
     tech: ['React.js', 'Vite', 'Python', 'Django', 'JavaScript', 'PostgreSQL', 'Git'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://www.optimusoverseasedu.com/',
+    githubUrl: 'https://github.com/PoojaBai-K/Optimus_overseas_consultancy_site',
     caseStudy: {
       challenge:
         'Education consultancies need to communicate a large amount of service information clearly while also capturing genuine student enquiries securely. A static or outdated site can make services harder to understand and reduce trust among prospective applicants.',
@@ -89,7 +89,7 @@ export const projects: ProjectItem[] = [
     description:
       'A billing and invoicing application created for cafe operations, focused on fast order handling, accurate price calculations, and a simple point-of-sale style experience. Built with React.js and Vite on the frontend and integrated with REST APIs, the system supports product selection, invoice creation, tax calculation, and billing data processing. The project helps streamline counter workflows and reduces manual effort in preparing and managing customer bills.',
     image:
-      'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80',
+      '/bill.jpeg',
     tech: ['React.js', 'Vite', 'Python', 'Django', 'JavaScript', 'REST API', 'Git'],
     liveUrl: '#',
     githubUrl: 'https://github.com/PoojaBai-K/BillingSoftware_frontend',
@@ -119,10 +119,10 @@ export const projects: ProjectItem[] = [
     description:
       'A Swiggy-inspired mobile food delivery application built with React Native and Expo, focused on responsive mobile flows, smooth navigation, and a familiar ordering experience. The app was designed to showcase food discovery, restaurant browsing, menu exploration, cart handling, and checkout-oriented UI patterns in a polished cross-platform interface. It demonstrates strong mobile component structuring and user-first interaction design for modern app experiences.',
     image:
-      'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80',
+      '/twiggy.jpeg',
     tech: ['React Native', 'Expo', 'JavaScript', 'Mobile UI', 'API Integration', 'Git'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/PoojaBai-K/MyFirstApp1',
     caseStudy: {
       challenge:
         'Food delivery apps require fast browsing, intuitive cart flows, and smooth mobile navigation to keep users engaged. Recreating that experience in a cross-platform app means balancing performance, reusable UI, and a clean ordering journey.',
@@ -152,7 +152,7 @@ export const projects: ProjectItem[] = [
       'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1200&q=80',
     tech: ['React Native', 'Expo', 'JavaScript', 'Mobile UI', 'Realtime Concepts', 'Git'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/PoojaBai-K/Myapp',
     caseStudy: {
       challenge:
         'Meeting apps need clear user flows for joining, managing, and participating in sessions without overwhelming the user. Designing such an interface requires careful attention to navigation, control visibility, and layout clarity.',
@@ -181,8 +181,8 @@ export const projects: ProjectItem[] = [
     image:
       'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80',
     tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Responsive Design', 'Git'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://gamingandfoodlounge.netlify.app/',
+    githubUrl: 'https://github.com/PoojaBai-K/Food-And-Beverages-site',
     caseStudy: {
       challenge:
         'Combining food ordering and gaming reservations in one platform requires a layout that feels cohesive while still supporting two different user intents. The interface must make ordering and booking feel equally accessible without becoming visually cluttered.',
@@ -210,7 +210,7 @@ export const projects: ProjectItem[] = [
       'A news-focused web application built to help users explore current events through an organized, readable, and category-driven interface. InsightStream brings together news discovery patterns with clean frontend design so readers can navigate headlines, topics, and article groupings more efficiently. The project highlights information architecture, dynamic rendering, and content-first user experience design.',
     image:
       'https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=80',
-    tech: ['JavaScript', 'HTML', 'CSS', 'REST API', 'Responsive Design', 'Git'],
+    tech: ['JavaScript', 'React', 'Tailwind CSS', 'REST API', 'Responsive Design',],
     liveUrl: '#',
     githubUrl: 'https://github.com/PoojaBai-K/InsightStream-Navigate-News-Landscape',
     caseStudy: {
@@ -241,8 +241,8 @@ export const projects: ProjectItem[] = [
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     tech: ['React.js', 'Vite', 'Python', 'Django', 'JavaScript', 'REST API', 'Git'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://www.manovate.co.in/',
+    githubUrl: 'https://github.com/PoojaBai-K/Manovate_site',
     caseStudy: {
       challenge:
         'A software company website must do more than look professional. It needs to clearly explain services, communicate credibility, and support enquiries without becoming too generic or difficult to manage.',
@@ -272,7 +272,7 @@ export const projects: ProjectItem[] = [
       'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80',
     tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Responsive Design', 'Git'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/PoojaBai-K/Cafe_Website',
     caseStudy: {
       challenge:
         'Cafe websites need to capture brand atmosphere quickly while still making menu content easy to browse. The frontend must feel visually rich without sacrificing readability or mobile usability.',
@@ -299,10 +299,10 @@ export const projects: ProjectItem[] = [
     description:
       'A full-stack intelligent attendance system that combines face recognition with gender prediction to automate attendance marking and enrich monitoring workflows. The project includes both frontend and backend layers, enabling users to manage attendance records, process recognition events, and review system outputs through a structured interface. It demonstrates the integration of computer vision concepts with practical administrative software.',
     image:
-      'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1200&q=80',
+      '/face.jpeg',
     tech: ['Python', 'Django', 'React.js', 'JavaScript', 'Computer Vision', 'REST API', 'Git'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/PoojaBai-K/Face-Recognition-with-Gender-Prediction',
     caseStudy: {
       challenge:
         'Traditional attendance systems are vulnerable to manual errors and proxy entries, while intelligent attendance platforms require accurate recognition workflows and usable administrative interfaces.',
@@ -331,8 +331,8 @@ export const projects: ProjectItem[] = [
     image:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
     tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Responsive Design', 'Git'],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://www.tazvirotechnologies.com/',
+    githubUrl: 'https://github.com/PoojaBai-K/Tazviro_site',
     caseStudy: {
       challenge:
         'A technology company website needs to communicate professionalism quickly while keeping service information approachable and easy to scan. The frontend must balance brand presentation with clarity and trust.',
@@ -362,7 +362,7 @@ export const projects: ProjectItem[] = [
       'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80',
     tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Responsive Design', 'Git'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/PoojaBai-K/Appointment',
     caseStudy: {
       challenge:
         'Salon customers need a booking experience that feels simple and visually reassuring, while the business needs a frontend that presents services clearly and encourages appointment conversion.',

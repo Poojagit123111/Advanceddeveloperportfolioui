@@ -7,6 +7,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 export function ProjectCaseStudyPage() {
   const { slug } = useParams();
   const project = projects.find((item) => item.slug === slug);
+  const hasLiveUrl = Boolean(project?.liveUrl && project.liveUrl.trim() && project.liveUrl !== '#');
 
   if (!project) {
     return (
@@ -58,20 +59,7 @@ export function ProjectCaseStudyPage() {
               ))}
             </div>
 
-            <div className="flex gap-3 mt-8">
-              <button
-                onClick={() => window.open(project.liveUrl, '_blank')}
-                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-accent transition-all"
-              >
-                Live Demo
-              </button>
-              <button
-                onClick={() => window.open(project.githubUrl, '_blank')}
-                className="bg-card border border-primary text-foreground px-6 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all"
-              >
-                GitHub
-              </button>
-            </div>
+            
           </motion.div>
         </div>
 

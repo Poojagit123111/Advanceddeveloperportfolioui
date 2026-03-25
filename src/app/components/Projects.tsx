@@ -11,11 +11,12 @@
     enableFilters?: boolean;
   }
 
-  export function Projects({ limit, showViewAll = false, enableFilters = false }: ProjectsProps) {
-    const [selectedCategory, setSelectedCategory] = useState<'All' | ProjectCategory>('All');
-    const [activeIndex, setActiveIndex] = useState(0);
-    const isHomeShowcase = !enableFilters && showViewAll;
-    const isProjectsPage = enableFilters;
+export function Projects({ limit, showViewAll = false, enableFilters = false }: ProjectsProps) {
+  const [selectedCategory, setSelectedCategory] = useState<'All' | ProjectCategory>('All');
+  const [activeIndex, setActiveIndex] = useState(0);
+  const isHomeShowcase = !enableFilters && showViewAll;
+  const isProjectsPage = enableFilters;
+  const hasLiveUrl = (liveUrl?: string) => Boolean(liveUrl && liveUrl.trim() && liveUrl !== '#');
 
     const visibleProjects = useMemo(() => {
       const filtered =
@@ -203,13 +204,15 @@
                         <Github size={16} />
                         Code
                       </button>
-                      <button
-                        onClick={() => window.open(visibleProjects[activeIndex].liveUrl, '_blank')}
-                        className="inline-flex items-center gap-2 rounded-xl border border-primary/30 px-5 py-3 text-foreground/90 hover:bg-primary/15 transition-colors"
-                      >
-                        <ExternalLink size={16} />
-                        Live
-                      </button>
+                      {hasLiveUrl(visibleProjects[activeIndex].liveUrl) && (
+                        <button
+                          onClick={() => window.open(visibleProjects[activeIndex].liveUrl, '_blank')}
+                          className="inline-flex items-center gap-2 rounded-xl border border-primary/30 px-5 py-3 text-foreground/90 hover:bg-primary/15 transition-colors"
+                        >
+                          <ExternalLink size={16} />
+                          Live
+                        </button>
+                      )}
                     </div>
                   </motion.article>
 
@@ -302,14 +305,16 @@
                       ))}
                     </div>
 
-                    <div className="grid grid-cols-3 gap-2">
-                      <button
-                        onClick={() => window.open(project.liveUrl, '_blank')}
-                        className="bg-primary text-primary-foreground px-3 py-2.5 rounded-lg hover:bg-accent transition-all duration-300 flex items-center justify-center gap-1.5 text-sm"
-                      >
-                        <ExternalLink size={14} />
-                        Live
-                      </button>
+                    <div className={`grid gap-2 ${hasLiveUrl(project.liveUrl) ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                      {hasLiveUrl(project.liveUrl) && (
+                        <button
+                          onClick={() => window.open(project.liveUrl, '_blank')}
+                          className="bg-primary text-primary-foreground px-3 py-2.5 rounded-lg hover:bg-accent transition-all duration-300 flex items-center justify-center gap-1.5 text-sm"
+                        >
+                          <ExternalLink size={14} />
+                          Live
+                        </button>
+                      )}
                       <button
                         onClick={() => window.open(project.githubUrl, '_blank')}
                         className="bg-card border border-primary text-foreground px-3 py-2.5 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-1.5 text-sm"

@@ -67,6 +67,8 @@ const domains: SkillDomain[] = [
       { name: 'Code Quality', level: 92 },
       { name: 'Debugging', level: 90 },
       { name: 'Team Collaboration', level: 89 },
+      { name: 'n8n', level: 75 },
+      { name: 'Prompt Engineering', level: 91 },
     ],
     tags: ['Architecture', 'Refactoring', 'Documentation', 'Mentoring'],
   },
