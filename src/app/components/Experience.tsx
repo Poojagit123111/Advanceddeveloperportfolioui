@@ -3,52 +3,45 @@ import { Briefcase, Calendar } from 'lucide-react';
 
 export function Experience() {
   const experiences = [
-    {
-      company: 'TechCorp Solutions',
-      role: 'Senior Full Stack Developer',
-      period: '2022 - Present',
-      description: 'Leading development of cloud-based SaaS platform serving 50K+ users. Architected microservices infrastructure and mentored junior developers.',
-      achievements: [
-        'Reduced API response time by 60%',
-        'Implemented CI/CD pipeline',
-        'Led team of 5 developers',
-      ],
-    },
-    {
-      company: 'Digital Innovations Inc',
-      role: 'Full Stack Developer',
-      period: '2020 - 2022',
-      description: 'Developed e-commerce platform and customer management systems using React, Node.js, and PostgreSQL.',
-      achievements: [
-        'Built features used by 100K+ customers',
-        'Improved page load speed by 45%',
-        'Integrated payment gateways',
-      ],
-    },
-    {
-      company: 'StartupHub',
-      role: 'Software Developer',
-      period: '2019 - 2020',
-      description: 'Created web applications for various clients using modern JavaScript frameworks and responsive design principles.',
-      achievements: [
-        'Delivered 15+ client projects',
-        'Maintained 98% client satisfaction',
-        'Implemented RESTful APIs',
-      ],
-    },
-    {
-      company: 'Freelance',
-      role: 'Freelance Developer',
-      period: '2018 - 2019',
-      description: 'Provided web development services to small businesses and startups, specializing in custom website development and maintenance.',
-      achievements: [
-        'Completed 30+ projects',
-        'Built portfolio of satisfied clients',
-        'Established development workflow',
-      ],
-    },
-  ];
-
+  {
+    company: 'Manha Facility Management, Chennai',
+    role: 'Full Stack Developer',
+    period: 'May 2025 – Mar 2026',
+    description:
+      'Worked on developing responsive web features and backend integrations for internal business systems using React, JavaScript, and Django-based APIs.',
+    achievements: [
+      'Developed responsive UI components using React, HTML, and CSS',
+      'Improved page load performance by around 25%',
+      'Integrated REST APIs for dynamic data handling between frontend and backend',
+      'Collaborated with the development team using Git and Agile workflows',
+    ],
+  },
+  {
+    company: 'Manha Facility Management, Chennai',
+    role: 'Full Stack Developer Intern',
+    period: 'Feb 2025 – Apr 2025',
+    description:
+      'Supported development of full-stack modules while gaining practical experience with frontend frameworks and backend API integration.',
+    achievements: [
+      'Built web modules using HTML, CSS, JavaScript, and Django',
+      'Assisted in creating and integrating REST APIs',
+      'Debugged application issues and improved system performance',
+      'Collaborated with developers on feature implementation and testing',
+    ],
+  },
+  {
+    company: '8Queens Pvt Ltd, Chennai',
+    role: 'Web Developer Intern',
+    period: 'Nov 2024 – Dec 2024',
+    description:
+      'Worked on designing and improving responsive web pages while supporting frontend maintenance and usability improvements.',
+    achievements: [
+      'Developed responsive web pages using HTML, CSS, and JavaScript',
+      'Enhanced UI/UX by improving layout and accessibility',
+      'Fixed frontend bugs and optimized website performance',
+    ],
+  },
+];
   return (
     <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
@@ -60,9 +53,7 @@ export function Experience() {
         >
           <span className="text-primary tracking-[0.3em] uppercase text-sm">Career Path</span>
           <h2 className="text-5xl mt-4">Work Experience</h2>
-          <p className="text-secondary mt-4 max-w-2xl mx-auto">
-            My professional journey in software development
-          </p>
+        
         </motion.div>
 
         <div className="relative">

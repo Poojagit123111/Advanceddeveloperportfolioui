@@ -8,24 +8,43 @@ export function Contact() {
     email: '',
     message: '',
   });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mwvrodwo', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'alex.chen@example.com', href: 'mailto:alex.chen@example.com' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, label: 'Location', value: 'San Francisco, CA', href: '#' },
+    { icon: Mail, label: 'Email', value: 'pk535811235@gmail.com', href: 'mailto:pk535811235@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+91 8667458118', href: 'tel:+91 8667458118' },
+    { icon: MapPin, label: 'Location', value: 'Chennai, Tamil Nadu', href: '#' },
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: Twitter, label: 'Twitter', href: 'https://twitter.com' },
-    { icon: Mail, label: 'Email', href: 'mailto:alex.chen@example.com' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/PoojaBai-K' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/poojabai04' },
+    { icon: Mail, label: 'Email', href: 'mailto:pk535811235@gmail.com' },
   ];
 
   return (
@@ -153,12 +172,24 @@ export function Contact() {
                 />
               </div>
 
+              {status === 'success' && (
+                <div className="text-sm text-green-600 bg-green-50 border border-green-200 px-4 py-3 rounded-lg">
+                  Thanks for reaching out! Your message was sent successfully.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="text-sm text-red-600 bg-red-50 border border-red-200 px-4 py-3 rounded-lg">
+                  Something went wrong. Please try again or email me directly.
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-accent transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-2 hover:scale-105"
+                disabled={status === 'submitting'}
+                className="w-full bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-accent transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-2 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <Send size={20} />
-                Send Message
+                {status === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>
